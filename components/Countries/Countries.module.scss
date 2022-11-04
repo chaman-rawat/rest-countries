@@ -1,0 +1,37 @@
+@import "../../styles/variables";
+
+.countries {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 5rem;
+}
+
+.country {
+    background-color: #fff;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    overflow: hidden;
+
+    &__flag {
+        object-fit: cover;
+        width: 100%;
+        aspect-ratio: 5/3;
+    }
+
+    &__title, &__details {
+        padding: 0 1.5rem;
+    }
+
+    &__title {
+        margin-block-start: 1.5rem;
+        font-size: 1.25rem;
+    }
+
+    &__details {
+        margin-block-end: 2.5rem;
+        line-height: 1.7;
+        span {
+            font-weight: 600;
+        }
+    }
+}

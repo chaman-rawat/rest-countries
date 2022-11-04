@@ -1,0 +1,41 @@
+@import "../../styles/variables";
+
+$search-clr: lighten($clr-dark-gray, 5%);
+$search-height: 3.5rem;
+
+.filter__form {
+  margin: 3rem 0;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.filter__icon {
+  position: absolute;
+  color: $search-clr;
+  width: 1.25rem;
+  height: $search-height;
+  left: 2rem;
+}
+
+.filter__search {
+  width: 30rem;
+  height: $search-height;
+  padding-inline: 4.5rem 1rem;
+  font-size: 0.9rem;
+  border: 0;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+
+  &::after {
+    content: icon;
+  }
+
+  &::placeholder {
+    color: $search-clr;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

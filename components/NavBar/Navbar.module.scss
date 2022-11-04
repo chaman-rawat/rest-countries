@@ -1,0 +1,10 @@
+@import "../../styles/variables";
+
+.navbar {
+    background-color: $clr-white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: $box-shadow;
+    padding-block: 0.2rem;
+}
