@@ -1,37 +1,42 @@
 @import "../../styles/variables";
 
 .countries {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4.75rem;
 }
 
 .country {
-    background-color: #fff;
-    border-radius: $border-radius;
-    box-shadow: $box-shadow;
-    overflow: hidden;
+  overflow: hidden;
 
-    &__flag {
-        object-fit: cover;
-        width: 100%;
-        aspect-ratio: 5/3;
-    }
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: $transition-time;
+  }
 
-    &__title, &__details {
-        padding: 0 1.5rem;
-    }
+  &__flag {
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 5/3;
+  }
 
-    &__title {
-        margin-block-start: 1.5rem;
-        font-size: 1.25rem;
-    }
+  &__title,
+  &__details {
+    padding: 0 1.5rem;
+  }
 
-    &__details {
-        margin-block-end: 2.5rem;
-        line-height: 1.7;
-        span {
-            font-weight: 600;
-        }
+  &__title {
+    margin-block-start: 1.25rem;
+    font-size: 1.125rem;
+  }
+
+  &__details {
+    margin-block-end: 2.5rem;
+    line-height: 1.7;
+    font-size: $font-size;
+    span {
+      font-weight: 600;
     }
+  }
 }

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import classes from "./Countries.module.scss";
 
-export default function Countries({region, filter}) {
+export default function Countries({ region, filter }) {
   const [countries, setCountries] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -13,8 +13,11 @@ export default function Countries({region, filter}) {
   const getCountries = async () => {
     setLoading(true);
     try {
-
-      const response = await fetch(`https://restcountries.com/v2/${region == 'all' ? 'all' : `region/${region}`}`);
+      const response = await fetch(
+        `https://restcountries.com/v2/${
+          region == "all" ? "all" : `region/${region}`
+        }`
+      );
 
       if (!response.ok) {
         throw new Error("Error Occured!");
@@ -37,8 +40,12 @@ export default function Countries({region, filter}) {
     <>
       <section className={classes.countries}>
         {countries.map((country) => (
-          <article key={country.name.toString()} className={classes.country}>
-            <img className={classes.country__flag} src={country.flags.svg} alt={country.name} />
+          <article key={country.name.toString()} className={`${classes.country} border`}>
+            <img
+              className={classes.country__flag}
+              src={country.flags.svg}
+              alt={country.name}
+            />
             <h2 className={classes.country__title}>{country.name}</h2>
             <ul className={classes.country__details}>
               <li>

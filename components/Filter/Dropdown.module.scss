@@ -1,0 +1,50 @@
+@import "../../styles/variables";
+
+$width: 12.5rem;
+
+.dropdown {
+  font-size: $font-size;
+  display: flex;
+  align-items: center;
+  padding-inline-start: 1.5rem;
+  width: $width;
+  height: 100%;
+  position: relative;
+
+  &:focus,
+  &:hover {
+    cursor: pointer;
+    outline: none;
+    box-shadow: $box-shadow-hovered;
+  }
+
+  &__icon {
+    position: absolute;
+    right: 1rem;
+  }
+
+  &__selection {
+    display: flex;
+    right: 0;
+    top: calc(100% - 0.5rem);
+    overflow: hidden;
+    width: $width;
+    padding: 1rem 1.5rem;
+    position: absolute;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: $font-size;
+    animation: drop-down-animate 1000ms ease-in forwards;
+
+    & li {
+      &:hover {
+        color: $clr-dark-gray;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}

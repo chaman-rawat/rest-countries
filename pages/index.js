@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="container">
       <Filter />
-      <Countries region='asia' filter='india'/>
+      <Countries region='europe' filter='india'/>
     </div>
   );
 }

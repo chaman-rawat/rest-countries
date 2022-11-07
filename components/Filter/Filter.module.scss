@@ -22,7 +22,7 @@ $search-height: 3.5rem;
   width: 30rem;
   height: $search-height;
   padding-inline: 4.5rem 1rem;
-  font-size: 0.9rem;
+  font-size: $font-size;
   border: 0;
   border-radius: $border-radius;
   box-shadow: $box-shadow;
@@ -35,7 +35,9 @@ $search-height: 3.5rem;
     color: $search-clr;
   }
 
-  &:focus {
+  &:focus,
+  &:hover {
     outline: none;
+    box-shadow: $box-shadow-hovered;
   }
 }
