@@ -8,7 +8,10 @@ export default function DropDown(props) {
 
   const selectRegionHandler = (e) => {
     setShowOptions(false);
-    setSelectedRegion(e.target.innerHTML);
+    const selectedCountry = e.target.innerHTML;
+
+    setSelectedRegion(selectedCountry);
+    props.onSelect(selectedCountry);
   };
 
   const onFilterClickHandler = () => setShowOptions((prev) => !prev);
@@ -24,8 +27,10 @@ export default function DropDown(props) {
       </div>
       {showOptions && (
         <ul className={`${classes.dropdown__selection} border`}>
-          {props.data.map((row) => (
-            <li onClick={selectRegionHandler}>{row.name}</li>
+          {props.data.map((option) => (
+            <li key={option} onClick={selectRegionHandler}>
+              {option}
+            </li>
           ))}
         </ul>
       )}

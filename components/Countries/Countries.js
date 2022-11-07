@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import classes from "./Countries.module.scss";
@@ -8,7 +9,7 @@ export default function Countries({ region, filter }) {
 
   useEffect(() => {
     getCountries();
-  }, []);
+  }, [region, filter]);
 
   const getCountries = async () => {
     setLoading(true);
@@ -40,24 +41,29 @@ export default function Countries({ region, filter }) {
     <>
       <section className={classes.countries}>
         {countries.map((country) => (
-          <article key={country.name.toString()} className={`${classes.country} border`}>
-            <img
-              className={classes.country__flag}
-              src={country.flags.svg}
-              alt={country.name}
-            />
-            <h2 className={classes.country__title}>{country.name}</h2>
-            <ul className={classes.country__details}>
-              <li>
-                <span>Population:</span> {country.population}
-              </li>
-              <li>
-                <span>Region:</span> {country.region}
-              </li>
-              <li>
-                <span>Capital:</span> {country.capital}
-              </li>
-            </ul>
+          <article
+            key={country.name.toString()}
+            className={`${classes.country} border`}
+          >
+            <Link href={country.alpha3Code}>
+              <img
+                className={classes.country__flag}
+                src={country.flags.svg}
+                alt={country.name}
+              />
+              <h2 className={classes.country__title}>{country.name}</h2>
+              <ul className={classes.country__details}>
+                <li>
+                  <span>Population:</span> {country.population}
+                </li>
+                <li>
+                  <span>Region:</span> {country.region}
+                </li>
+                <li>
+                  <span>Capital:</span> {country.capital}
+                </li>
+              </ul>
+            </Link>
           </article>
         ))}
       </section>
