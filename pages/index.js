@@ -3,7 +3,7 @@ import Countries from "../components/Countries/Countries";
 import { useState } from "react";
 
 export default function Home() {
-  const [searchData, setSearchData] = useState({ region: "all", filter: "" });
+  const [searchData, setSearchData] = useState({ region: "asia", filter: "" });
 
   const filterChangeHandler = (query) => {
     setSearchData(prev => {
