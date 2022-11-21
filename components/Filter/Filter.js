@@ -1,18 +1,31 @@
-import { TbSearch } from "react-icons/tb";
+import { useRef } from "react";
+import { TbSearch, TbTarget } from "react-icons/tb";
 import DropDown from "./DropDown";
 import classes from "./Filter.module.scss";
 
 export default function Filter(props) {
-  const regions = ["Africa", "America", "Asia", "Europe", "Oceania", "All"];
+  const regions = ["Africa", "Americas", "Asia", "Europe", "Oceania", "All"];
+  const inputRef = useRef();
+  const inputChangeHandler = (event) => {
+    event.preventDefault();
+    const currentVal = inputRef.current.value.trim().toLowerCase();
+    props.onFilter(prev => {
+      return {region: prev.region, filter: currentVal};
+    });
+  };
 
   const selectChangeHandler = (region) => {
-    props.onFilter(region);
+    props.onFilter(prev => {
+      console.log(region.toLowerCase());
+      return {region: region.toLowerCase(), filter: prev.filter};
+    });
   };
 
   return (
-    <form className={classes.filter__form} action="">
+    <form className={classes.filter__form} onSubmit={inputChangeHandler}>
       <TbSearch className={classes.filter__icon} />
       <input
+        ref={inputRef}
         className={`${classes.filter__search} border`}
         type="text"
         placeholder="Search for a country..."
