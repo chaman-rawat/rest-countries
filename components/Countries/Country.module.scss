@@ -1,4 +1,41 @@
+@import "../../styles/variables";
+
+.main_content {
+  padding-block: 5rem;
+  color: $clr-very-dark-blue;
+}
+
+.back_button {
+  width: 8.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  box-shadow: $box-shadow;
+
+  &:hover {
+    box-shadow: $box-shadow-hovered;
+    cursor: pointer;
+  }
+}
+
 .country {
-    // width: 20%;
-    // background-color: #00000020;
+  padding-block: 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+}
+
+.flag {
+  width: 82%;
+  aspect-ratio: 7/5;
+}
+
+.country__details {
+  display: grid;
+  grid-template-areas:
+    "title"
+    "left right"
+    "border";
 }

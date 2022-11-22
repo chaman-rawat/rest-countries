@@ -25,9 +25,21 @@ ul {
   }
 }
 
+img {
+  max-width: 100%;
+}
+
+strong {
+  font-weight: 600;
+}
+
 .container {
   padding: 0 5rem;
   margin: 0 auto;
+}
+
+.main_content {
+  padding-block: 3rem;
 }
 
 .border {

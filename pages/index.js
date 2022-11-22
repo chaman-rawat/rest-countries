@@ -6,7 +6,7 @@ export default function Home() {
   const [searchData, setSearchData] = useState({ region: "all", filter: "" });
 
   return (
-    <div className="container">
+    <div className="container main_content">
       <Filter onFilter={setSearchData} />
       <Countries region={searchData.region} filter={searchData.filter} />
     </div>

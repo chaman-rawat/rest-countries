@@ -16,10 +16,10 @@ export default function Countries({ region, filter }) {
     try {
       const response = await fetch(
         filter === ""
-          ? `https://restcountries.com/v3.1/${
+          ? `https://restcountries.com/v2/${
               region == "all" ? "all" : `region/${region}`
             }`
-          : `https://restcountries.com/v3.1/name/${filter}`
+          : `https://restcountries.com/v2/name/${filter}`
       );
 
       if (!response.ok) {
@@ -28,7 +28,7 @@ export default function Countries({ region, filter }) {
       }
 
       const data = (await response.json()).sort((a, b) =>
-        a.name.common.localeCompare(b.name.common)
+        a.name.localeCompare(b.name)
       );
 
       setCountries([...data]);
@@ -44,20 +44,23 @@ export default function Countries({ region, filter }) {
   }
 
   if (countries.length === 0) {
-    return <p>No result Found ...</p>
+    return <p>No result Found ...</p>;
   }
 
   return (
     <>
       <section className={classes.countries}>
         {countries
-          .filter((country) => region === "all" || country.region.toLowerCase() === region)
+          .filter(
+            (country) =>
+              region === "all" || country.region.toLowerCase() === region
+          )
           .map((country) => (
             <article
-              key={country.name.common.toString()}
+              key={country.name.toString()}
               className={`${classes.country} border`}
             >
-              <Link href={country.cca3}>
+              <Link href={country.alpha3Code}>
                 <img
                   className={classes.country__flag}
                   src={country.flags.svg}
@@ -67,7 +70,7 @@ export default function Countries({ region, filter }) {
                   title={country.name.official}
                   className={classes.country__title}
                 >
-                  {country.name.common}
+                  {country.name}
                 </h2>
                 <ul className={classes.country__details}>
                   <li>

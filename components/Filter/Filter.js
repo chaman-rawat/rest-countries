@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { TbSearch, TbTarget } from "react-icons/tb";
+import { TbSearch } from "react-icons/tb";
 import DropDown from "./DropDown";
 import classes from "./Filter.module.scss";
 
@@ -9,15 +9,14 @@ export default function Filter(props) {
   const inputChangeHandler = (event) => {
     event.preventDefault();
     const currentVal = inputRef.current.value.trim().toLowerCase();
-    props.onFilter(prev => {
-      return {region: prev.region, filter: currentVal};
+    props.onFilter((prev) => {
+      return { region: prev.region, filter: currentVal };
     });
   };
 
   const selectChangeHandler = (region) => {
-    props.onFilter(prev => {
-      console.log(region.toLowerCase());
-      return {region: region.toLowerCase(), filter: prev.filter};
+    props.onFilter((prev) => {
+      return { region: region.toLowerCase(), filter: prev.filter };
     });
   };
 
