@@ -43,12 +43,6 @@ export async function getStaticProps(context) {
   const languages = data.languages.map((l) => l.name);
   const borders = data.borders;
 
-  // const borders = data.borders.map(async (b) => {
-  //   const res = await fetch(`https://restcountries.com/v2/alpha/${b}`);
-  //   const d = await response.json();
-  //   return d.name;
-  // });
-
   return {
     props: {
       flag,

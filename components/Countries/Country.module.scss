@@ -22,20 +22,45 @@
 
 .country {
   padding-block: 5rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   justify-content: space-between;
 }
 
 .flag {
-  width: 82%;
-  aspect-ratio: 7/5;
+  width: 43.75%;
+  & > img {
+    aspect-ratio: 7/5;
+  }
 }
 
 .country__details {
-  display: grid;
-  grid-template-areas:
-    "title"
-    "left right"
-    "border";
+  width: calc(50% - 2.5rem);
+  padding-block-start: 2.5rem;
+}
+
+.country__details > * {
+  margin: 0;
+}
+
+.country_name {
+  font-size: 2rem;
+}
+
+.details__column {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0 3.5rem;
+  line-height: 2;
+
+  & > ul {
+    width: 42%;
+  }
+}
+
+.border_label {
+  background: $clr-very-light-gray;
+  font-size: 0.8rem;
+  margin-inline-start: 0.3rem;
+  border-radius: 5px;
+  padding: 0.25rem 1rem;
 }
