@@ -18,7 +18,9 @@ export default function Country({ countryData }) {
 
       <div className={classes.country}>
         <div className={classes.flag}>
-          <img src={countryData.flag} alt={countryData.name} />
+          <picture>
+            <img src={countryData.flag} alt={countryData.name} />
+          </picture>
         </div>
 
         <div className={classes.country__details}>
@@ -60,8 +62,8 @@ export default function Country({ countryData }) {
           <div>
             <strong>Border Countries: </strong>
             {countryData.borders.map((border) => (
-              <Link href={border}>
-                <span key={border} className={`border ${classes.border_label}`}>
+              <Link key={border} href={border}>
+                <span className={`border ${classes.border_label}`}>
                   {border}
                 </span>
               </Link>

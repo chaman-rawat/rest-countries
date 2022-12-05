@@ -37,11 +37,11 @@ export async function getStaticProps(context) {
   const population = data.population;
   const region = data.region;
   const subRegion = data.subregion;
-  const capital = data.capital;
+  const capital = data.capital || "";
   const topLevelDomain = data.topLevelDomain;
-  const currencies = Object.values(data.currencies).map((c) => c.name);
+  const currencies = data.currencies ? Object.values(data.currencies).map((c) => c.name) : [];
   const languages = data.languages.map((l) => l.name);
-  const borders = data.borders;
+  const borders =  data.borders || [];
 
   return {
     props: {

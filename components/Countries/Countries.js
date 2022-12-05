@@ -61,11 +61,13 @@ export default function Countries({ region, filter }) {
               className={`${classes.country} border`}
             >
               <Link href={country.alpha3Code}>
-                <img
-                  className={classes.country__flag}
-                  src={country.flags.svg}
-                  alt={country.name}
-                />
+                <picture>
+                  <img
+                    className={classes.country__flag}
+                    src={country.flags.svg}
+                    alt={country.name}
+                  />
+                </picture>
                 <h2
                   title={country.name.official}
                   className={classes.country__title}
