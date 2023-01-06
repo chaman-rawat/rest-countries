@@ -40,7 +40,11 @@ export default function Countries({ region, filter }) {
   };
 
   if (loading) {
-    return <p>Loading ...</p>;
+    return (
+      <div className={classes.loader_background}>
+        <div class={classes.loader}></div>
+      </div>
+    );
   }
 
   if (countries.length === 0) {
