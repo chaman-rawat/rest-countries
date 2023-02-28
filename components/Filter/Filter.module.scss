@@ -20,6 +20,7 @@ $search-height: 3.5rem;
 
 .filter__search {
   width: 30rem;
+  max-width: 100%;
   height: $search-height;
   padding-inline: 4.5rem 1rem;
   font-size: $font-size;
@@ -40,4 +41,16 @@ $search-height: 3.5rem;
     outline: none;
     box-shadow: $box-shadow-hovered;
   }
+}
+
+@media (max-width: 1000px) {
+  .filter__form {
+    flex-direction: column;
+  }
+
+  .filter__search {
+    width: 100%;
+    margin-block-end: 3rem;
+  }
+
 }

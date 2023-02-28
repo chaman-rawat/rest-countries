@@ -48,3 +48,12 @@ $width: 12.5rem;
 .hidden {
   display: none;
 }
+
+@media (max-width: 1000px) {
+  .dropdown {
+    height: 3.5rem;
+    &__selection {
+      left: 0;
+    }
+  }
+}

@@ -76,3 +76,29 @@
     }
   }
 }
+
+@media (min-width: 2000px) {
+  .countries {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 1000px) {
+  .countries {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .countries {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .countries {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 4rem;
+    margin-inline: 3rem;
+  }
+}

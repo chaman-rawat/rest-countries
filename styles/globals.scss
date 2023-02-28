@@ -49,6 +49,22 @@ strong {
   background: $clr-white;
 }
 
+@media (min-width: 2000px) {
+  .container {
+    padding: 0 15vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .main_content {
+    padding-block: 2rem;
+  }
+}
+
 // @media (prefers-color-scheme: dark) {
 //   html {
 //     color-scheme: dark;

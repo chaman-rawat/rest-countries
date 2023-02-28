@@ -14,3 +14,14 @@
   color: $clr-dark-gray;
   transition: $transition-time;
 }
+
+@media (max-width: 600px) {
+  .navbar h1 {
+    font-size: 1.1em;
+    margin-block: 2rem;
+  }
+
+  .navbar strong {
+    font-size: small;
+  }
+}

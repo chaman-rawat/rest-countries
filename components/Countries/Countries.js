@@ -60,7 +60,7 @@ export default function Countries({ region, filter }) {
               region === "all" || country.region.toLowerCase() === region
           )
           .map((country) => (
-            <article
+            <div
               key={country.name.toString()}
               className={`${classes.country} border`}
             >
@@ -90,7 +90,7 @@ export default function Countries({ region, filter }) {
                   </li>
                 </ul>
               </Link>
-            </article>
+            </div>
           ))}
       </section>
     </>

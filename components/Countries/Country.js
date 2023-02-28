@@ -59,7 +59,7 @@ export default function Country({ countryData }) {
             </ul>
           </div>
 
-          <div>
+          <div className={classes.borders}>
             <strong>Border Countries: </strong>
             {countryData.borders.map((border) => (
               <Link key={border} href={border}>

@@ -64,3 +64,41 @@
   border-radius: 5px;
   padding: 0.25rem 1rem;
 }
+
+@media (max-width: 900px) {
+  .main_content {
+    padding: 3rem 2rem;
+    max-width: 600px;
+  }
+
+  .country {
+    flex-direction: column;
+  }
+
+  .flag {
+    width: 100%;
+    margin: auto;
+  }
+
+  .country__details {
+    width: 100%;
+    padding-block-start: 2.5rem;
+  }
+
+  .details__column {
+    flex-direction: column;
+    padding-bottom: 1.5rem;
+
+    & > ul {
+      width: 100%;
+    }
+  }
+
+  .borders {
+    overflow: scroll;
+    strong {
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+  }
+}
