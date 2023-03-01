@@ -1,18 +1,20 @@
-@import "../../styles/variables";
-
 .navbar {
-  background-color: $clr-white;
+  background-color: var(--clr-element);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: $box-shadow;
+  box-shadow: var(box-shadow);
   padding-block: 0.2rem;
 }
 
 .theme__switcher:hover {
   cursor: pointer;
-  color: $clr-dark-gray;
-  transition: $transition-time;
+  color: var(--clr-input);
+  transition: var(--transition-time);
+}
+
+.theme__switcher svg {
+  vertical-align: middle;
 }
 
 @media (max-width: 600px) {

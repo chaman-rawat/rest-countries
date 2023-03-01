@@ -1,8 +1,6 @@
-@import "../../styles/variables";
-
 .main_content {
   padding-block: 5rem;
-  color: $clr-very-dark-blue;
+  color: var(--clr-text);
 }
 
 .back_button {
@@ -12,10 +10,10 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  box-shadow: $box-shadow;
+  box-shadow: var(--box-shadow);
 
   &:hover {
-    box-shadow: $box-shadow-hovered;
+    box-shadow: var(--box-shadow-hovered);
     cursor: pointer;
   }
 }
@@ -58,7 +56,7 @@
 }
 
 .border_label {
-  background: $clr-very-light-gray;
+  background: var(--clr-background);
   font-size: 0.8rem;
   margin-inline-start: 0.3rem;
   border-radius: 5px;
